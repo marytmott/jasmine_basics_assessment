@@ -26,21 +26,34 @@ describe('gradingExercise', function() {
 		it ('should return a grade of F if the test score is between 0 and 59', function() {
 			expect(gradingExercise.letterGrader(50)).toEqual('F');
 		});
+	});
 
+	describe('averageScore', function() {
+		it('should return the average of an array of scores', function() {
+			expect(gradingExercise.averageScore([90, 95, 87, 60])).toEqual(83);
+		});
+
+		it('should round the averge of an array of scores if not a whole integer', function() {
+			expect(gradingExercise.averageScore([100, 79, 83, 96])).toEqual(90);
+		});
 
 	});
+
+	describe('medianScore', function() {
+		it('should return the median score from an array of scores', function () {
+			expect(gradingExercise.medianScore([52,80,80,86,94])).toEqual(80);
+		});
+		it('should calculate the average of the middle two scores if the array is even', function() {
+			expect(gradingExercise.medianScore([70, 85, 86, 90])).toEqual(86);
+		});
+	});
+
+	describe('modeScore', function() {
+		it('should return the score which appears the most often from an array of scores', function() {
+			expect(gradingExercise.modeScore([82, 92, 75, 91, 92, 89, 95, 100, 86])).toEqual(92);
+			expect(gradingExercise.modeScore([78, 78, 85, 85, 90, 90, 100, 90, 100, 98])).toEqual(90);
+
+		});
+	});
+
 });
-
-
-// Write a function `letterGrader` which takes a test score and returns the 
-// equivalent letter grade.
-
-// * A: 90-100
-// * B: 80-89
-// * C: 70-79
-// * D: 60-69
-// * F: 0-59
-
-// ```
-// letterGrader(98);
-// //=> 'A'

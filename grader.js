@@ -62,6 +62,4 @@
 
 };
 
-gradingExercise.modeScore([78, 78, 85, 85, 90, 90, 100, 90, 100, 98]);
-
 module.exports = gradingExercise;
